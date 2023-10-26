@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PUBG Zone Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #map-image {
+            width: 1000px;
+            height: 1000px;
+        }
+
+        .spawn-circle {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            border: 4px solid red;
+            opacity: 0.7;
+        }
+
+        .spawn-circle2 {
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            border: 4px solid red;
+            opacity: 0.7;
+        }
+
+        .spawn-circle3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid red;
+            opacity: 0.7;
+        }
+
+        .spawn-circle4 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid red;
+            opacity: 0.7;
+        }
+
+        .spawn-circle5 {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            border: 4px solid red;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <img src="mir.jpg" alt="PUBG Erangel Map" id="map-image">
+    <br><br>
+
+
+
+
+    <button id="spawn-button" class="spawn-button" style="top: 20px; right: 10px;">1st Zone</button>
+
+
+    <script>
+        document.getElementById("spawn-button").addEventListener("click", function () {
+            var mapImage = document.getElementById("map-image");
+            var spawnCircle = document.createElement("div");
+            spawnCircle.classList.add("spawn-circle");
+            var maxX = mapImage.width - 550;
+            var maxY = mapImage.height - 550;
+            spawnCircle.style.left = (Math.random() * maxX) + "px";
+            spawnCircle.style.top = (Math.random() * maxY) + "px";
+            mapImage.parentNode.insertBefore(spawnCircle, mapImage.nextSibling);
+        });
+    </script>
+
+    <button id="spawn-button2" class="spawn-button" style="top: 50px; right: 90px;">2nd Zone</button>
+    <script>
+        document.getElementById("spawn-button2").addEventListener("click", function () {
+            var mapImage = document.getElementById("map-image");
+            var spawnCircle = document.querySelector(".spawn-circle");
+            var spawnCircle2 = document.createElement("div");
+            spawnCircle2.classList.add("spawn-circle2");
+            var maxX = spawnCircle.offsetWidth - 310;
+            var maxY = spawnCircle.offsetHeight - 310;
+            var x = Math.random() * maxX + spawnCircle.offsetLeft;
+            var y = Math.random() * maxY + spawnCircle.offsetTop;
+            x = Math.min(x, spawnCircle.offsetLeft + spawnCircle.offsetWidth - spawnCircle2.offsetWidth);
+            y = Math.min(y, spawnCircle.offsetTop + spawnCircle.offsetHeight - spawnCircle2.offsetHeight);
+            spawnCircle2.style.left = x + "px";
+            spawnCircle2.style.top = y + "px";
+            mapImage.parentNode.insertBefore(spawnCircle2, mapImage.nextSibling);
+        });
+    </script>
+
+    <button id="spawn-button3" class="spawn-button" style="top: 50px; right: 90px;">3rd Zone</button>
+
+    <script>
+        document.getElementById("spawn-button3").addEventListener("click", function () {
+            var mapImage = document.getElementById("map-image");
+            var spawnCircle2 = document.querySelector(".spawn-circle2");
+            var spawnCircle3 = document.createElement("div");
+            spawnCircle3.classList.add("spawn-circle3");
+            var maxX = spawnCircle2.offsetWidth - 200;
+            var maxY = spawnCircle2.offsetHeight - 200;
+            var x = Math.random() * maxX + spawnCircle2.offsetLeft;
+            var y = Math.random() * maxY + spawnCircle2.offsetTop;
+            spawnCircle3.style.left = x + "px";
+            spawnCircle3.style.top = y + "px";
+            mapImage.parentNode.insertBefore(spawnCircle3, mapImage.nextSibling);
+        });
+    </script>
+    <button id="spawn-button4" class="spawn-button" style="top: 50px; right: 90px;">4th Zone</button>
+
+    <script>
+        document.getElementById("spawn-button4").addEventListener("click", function () {
+            var mapImage = document.getElementById("map-image");
+            var spawnCircle3 = document.querySelector(".spawn-circle3");
+            var spawnCircle4 = document.createElement("div");
+            spawnCircle4.classList.add("spawn-circle4");
+            var maxX = spawnCircle3.offsetWidth - 150;
+            var maxY = spawnCircle3.offsetHeight - 150;
+            var x = Math.random() * maxX + spawnCircle3.offsetLeft;
+            var y = Math.random() * maxY + spawnCircle3.offsetTop;
+            spawnCircle4.style.left = x + "px";
+            spawnCircle4.style.top = y + "px";
+            spawnCircle4.style.width = "150px";
+            spawnCircle4.style.height = "150px";
+            mapImage.parentNode.insertBefore(spawnCircle4, mapImage.nextSibling);
+        });
+    </script>
+
+
+
+
+
+    <button id="spawn-button5" class="spawn-button" style="top: 50px; right: 90px;">5th Zone</button>
+
+    <script>
+        document.getElementById("spawn-button5").addEventListener("click", function () {
+            var mapImage = document.getElementById("map-image");
+            var spawnCircle4 = document.querySelector(".spawn-circle4");
+            var spawnCircle5 = document.createElement("div");
+            spawnCircle5.classList.add("spawn-circle5");
+            var maxX = spawnCircle4.offsetWidth - 105;
+            var maxY = spawnCircle4.offsetHeight - 105;
+            var x = Math.random() * maxX + spawnCircle4.offsetLeft;
+            var y = Math.random() * maxY + spawnCircle4.offsetTop;
+            spawnCircle5.style.left = x + "px";
+            spawnCircle5.style.top = y + "px";
+            spawnCircle5.style.width = "105px";
+            spawnCircle5.style.height = "105px";
+            mapImage.parentNode.insertBefore(spawnCircle5, mapImage.nextSibling);
+        });
+    </script>
+
+    <button id="delete-button" class="spawn-button" style="top: 50px; right: 90px;">Delete Previous Zone</button>
+
+    <script>
+        document.getElementById("delete-button").addEventListener("click", function () {
+            var lastSpawnCircle = document.querySelector(".spawn-circle5") ||
+                document.querySelector(".spawn-circle4") ||
+                document.querySelector(".spawn-circle3") ||
+                document.querySelector(".spawn-circle2") ||
+                document.querySelector(".spawn-circle");
+            if (lastSpawnCircle) {
+                lastSpawnCircle.remove();
+            }
+        });
+    </script>
+
+    <button id="erangel-button" class="spawn-button" onclick="openFile()">Erangel</button>
+
+    <script>
+        function openFile() {
+            window.open("Erangel.html");
+        }
+    </script>
+
+
+    <a href="https://www.instagram.com/coachheavenn">
+        <img src="insta.png" id="instagram-icon">
+    </a>
+
+
+
+</body>
+</html>
